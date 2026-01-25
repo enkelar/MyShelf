@@ -58,13 +58,17 @@ git clone https://github.com/enkelar/books.git
 **Backend setup**
 
 cd backend
+
 npm install
+
 npm start
 
 **Frontend setup**
 
 cd frontend
+
 npm install
+
 npm start
 
 
