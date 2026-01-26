@@ -1,7 +1,6 @@
-// EditBook.js
 import React, { useState, useEffect } from "react";
 import BackButton from "../components/BackButton";
-import axios from "axios";
+import axios from "../utils/axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import SaveButton from "../components/SaveButton";
@@ -13,7 +12,6 @@ const EditBook = () => {
   const [publishYear, setPublishYear] = useState("");
   const [description, setDescription] = useState("");
 
-  //navigation hook
   const navigate = useNavigate();
 
   // Accessing the book id from the route parameters
@@ -35,7 +33,7 @@ const EditBook = () => {
         alert("An error happened. Please check console");
         console.log(error);
       });
-  }, []);
+  }, [id]);
 
   const handleEditBook = () => {
     const data = {
@@ -48,7 +46,7 @@ const EditBook = () => {
     axios
       .put(`http://localhost:8080/books/${id}`, data)
       .then(() => {
-        enqueueSnackbar("Book Edited successfully", { variant: "success" });
+        enqueueSnackbar("Book Edited successfully", { variant: "success", autoHideDuration: 1500 });
         console.log('Book edited succesfully')
         navigate("/");
       })

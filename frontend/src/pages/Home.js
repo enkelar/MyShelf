@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../utils/axios";
 import { Link } from "react-router-dom";
 import BooksCard from "../components/Home/BookCard";
 import "./home.css";
@@ -32,7 +32,7 @@ const Home = () => {
             <b>ADD</b>
           </button>
         </Link>
-        <h1>ElaReads</h1>
+        <h1>MyShelf</h1>
         <button className="white_btn" onClick={handleLogout}>
           Logout
         </button>

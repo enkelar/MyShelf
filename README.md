@@ -1,58 +1,86 @@
-# Dokumentacioni i Aplikacionit Web të Librarisë
+# MySHelf Application
 
-## Përmbledhje
+## Overview
 
-Ky aplikacion është një platformë e thjeshtë për menaxhimin e një koleksioni librash. Mundëson funksione si shikimi i një liste librash, krijimi i librave të rinj, ndryshimi i detajeve të librave ekzistues, dhe fshirja e librave. Përdoruesit mund të regjistrohen dhe të kyçen për të përdorur këto funksionalitete.
+MySHelf is a full-stack web platform for managing a personal collection of books.
+It allows users to register, log in, and perform CRUD operations (create, read, update, delete) on books in a secure and user-friendly environment.
 
-## Struktura e Projektit
+This project follows a client–server architecture and demonstrates practical use of modern web technologies.
 
-Projekti ndjek një arkitekturë klient-server, me pjesën e klientit të ndërtuar me React p dhe pjesën e serverit duke përdorur Node.js me Express. MongoDB përdoret si bazë të dhënash për të ruajtur informacionin e librave.
+## Features
 
-### Teknologjitë e Përdorura
+-User registration and authentication (JWT-based)
+-Secure login and protected routes
+-View a list of available books
+-Add new books to the collection
+-Edit existing book details
+-Delete books with confirmation
+-View detailed information for a single book
+-Responsive and component-based UI
 
-**Frontend:**
+## Technologies Used
 
-- React, React-Icons, ReactDom, React Router DOM
-- React Router (Navigimi)
-- Axios (Klienti HTTP për kërkesa API)
-- Notistack (Njoftimet Snackbar)
+**Frontend**
 
-**Backend:**
+-React, React Icons, React Router DOM
+-React Router
+-Axios
+-Notistack
 
-- Node.js
-- Express
-- MongoDB (Baza e të dhënave)
-- JWT (JSON Web Token) për autentikim e përdoruesve
+**Backend**
 
-### Përmbajtja
+-Node.js
+-Express.js
+-MongoDB
+-Mongoose
+-JSON Web Token (JWT) for authentication
 
-**Frontend:**
+## Project Structure
 
-**src/App.js**
+-The project follows a client–server architecture:
+-Frontend: Built with React, using reusable components and page-based routing.
+-Backend: RESTful API built with Express and Node.js.
+-Database: MongoDB for storing users and book data.
 
-Komponenti kryesor që menaxhon konfigurimin e rrugës bazuar në statusin e autentifikimit të përdoruesit.
+## Getting Started
 
-**pages**
+**Prerequisites**
 
-- **Login.js**: Faqe për hyrjen e përdoruesit.
-- **Signup.js**: Faqe për regjistrimin e përdoruesit.
-- **Home.js**: Faqe kryesore që shfaq një listë librash.
-- **CreateBook.js**: Faqe për krijimin e një libri të ri.
-- **DeleteBook.js**: Faqe për konfirmimin dhe fshirjen e një libri.
-- **EditBook.js**: Faqe për ndryshimin e një libri ekzistues.
-- **ShowBook.js**: Faqe që shfaq informacion të detajuar për një libër të vetëm.
+-Node.js
+-MongoDB (local or MongoDB Atlas)
+-npm or yarn
 
-  **src/components**
+**Installation**
 
-- **BackButton.js**: Komponent për një buton mbrapa me funksionalitetin e drejtimdhënies.
-- **BookCard.js**: Komponent për shfaqjen e një karte librash të vetëm.
-- **BookModal.js**: Komponent modal për shfaqjen e informacionit të detajuar të librit.
-- **BookSingleCard.js**: Komponent për një kartë librash të vetëm me veprime (shfaq, redakto, fshij).
-- **SaveButton.js**: Komponent butoni për veprimet e ruajtjes.
+-Clone the repository
+git clone https://github.com/enkelar/books.git
 
-**Backend:**
+**Backend setup**
 
-- **server.js**: Pikënisja për serverin Node.js dhe Express.
-- **db.js**: Konfigurimi për lidhjen me bazën e të dhënave MongoDB.
-- **models/book.js**: Modeli i Mongoose për skemën e librave.
-- **routes/bookRoutes.js**, **routes/authRoutes.js**, **routes/usersRoutes.js**: Trajtuesit e rrugës Express për operacione lidhur me librat, per regjistrimin e përdoruesve, dhe autentikimin e tyre
+cd backend
+
+npm install
+
+npm start
+
+**Frontend setup**
+
+cd frontend
+
+npm install
+
+npm start
+
+
+**The application will run at:
+
+Frontend: http://localhost:3000
+
+Backend: http://localhost:8080 
+
+## Author
+
+Enkela Retkoceri
+Applied Informatics Student
+
+LinkedIn: https://www.linkedin.com/in/enkela-retkoceri

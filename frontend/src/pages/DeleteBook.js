@@ -1,5 +1,5 @@
 import BackButton from "../components/BackButton";
-import axios from "axios";
+import axios from "../utils/axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import "./deleteBook.css";
@@ -13,7 +13,7 @@ const DeleteBook = () => {
     axios
       .delete(`http://localhost:8080/books/${id}`)
       .then(() => {
-        enqueueSnackbar("Book Deleted successfully", { variant: "success" });
+        enqueueSnackbar("Book Deleted successfully", { variant: "success", autoHideDuration: 1500 });
         console.log('Book deleted succesfully')
         navigate("/");
       })

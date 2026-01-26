@@ -1,8 +1,10 @@
 const express = require('express');
-const Book  = require('../models/books.js');
-
+const Book = require('../models/books');
+const auth = require('../middleware/auth');
 
 const router = express.Router();
+
+router.use(auth);  // Protect all routes
 
 // create new book
 router.post('/', async (req, res) => {
@@ -21,10 +23,10 @@ router.post('/', async (req, res) => {
       author: req.body.author,
       publishYear: req.body.publishYear,
       description: req.body.description,
+      user: req.user._id  // Link to current user
     };
 
     const book = await Book.create(newBook);
-
     return res.status(201).send(book);
   } catch (error) {
     console.log(error.message);
@@ -32,11 +34,10 @@ router.post('/', async (req, res) => {
   }
 });
 
-// get all books
+// get user's books only
 router.get('/', async (req, res) => {
   try {
-    const books = await Book.find({});
-
+    const books = await Book.find({ user: req.user._id });
     return res.status(200).json({
       count: books.length,
       data: books,
@@ -47,13 +48,14 @@ router.get('/', async (req, res) => {
   }
 });
 
-// get one book by id
+// get one book by id (user's only)
 router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params;
-
-    const book = await Book.findById(id);
-
+    const book = await Book.findOne({ _id: id, user: req.user._id });
+    if (!book) {
+      return res.status(404).json({ message: 'Book not found' });
+    }
     return res.status(200).json(book);
   } catch (error) {
     console.log(error.message);
@@ -61,7 +63,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// update a book
+// update a book (user's only)
 router.put('/:id', async (req, res) => {
   try {
     if (
@@ -75,11 +77,14 @@ router.put('/:id', async (req, res) => {
     }
 
     const { id } = req.params;
-
-    const result = await Book.findByIdAndUpdate(id, req.body);
+    const result = await Book.findOneAndUpdate(
+      { _id: id, user: req.user._id },
+      req.body,
+      { new: true }
+    );
 
     if (!result) {
-      return res.status(404).json({ message: 'Book not found' });
+      return res.status(404).json({ message: 'Book not found or not authorized' });
     }
 
     return res.status(200).send({ message: 'Book updated successfully' });
@@ -89,15 +94,14 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// delete a book
+// delete a book (user's only)
 router.delete('/:id', async (req, res) => {
   try {
     const { id } = req.params;
-
-    const result = await Book.findByIdAndDelete(id);
+    const result = await Book.findOneAndDelete({ _id: id, user: req.user._id });
 
     if (!result) {
-      return res.status(404).json({ message: 'Book not found' });
+      return res.status(404).json({ message: 'Book not found or not authorized' });
     }
 
     return res.status(200).send({ message: 'Book deleted successfully' });

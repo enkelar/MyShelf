@@ -1,4 +1,5 @@
 import React from "react";
+import './utils/axios';
 import { Routes, Route, Navigate } from "react-router-dom";
 import { SnackbarProvider } from "notistack";
 import Home from "./pages/Home";

@@ -1,11 +1,9 @@
-// BookModal.js
 import React from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { PiBookOpenTextLight } from 'react-icons/pi';
 import { BiUserCircle } from 'react-icons/bi';
 import './bookModal.css';
 
-//Book details
 const BookModal = ({ book, onClose }) => {
   return (
     <div className='modal-overlay' onClick={onClose}>

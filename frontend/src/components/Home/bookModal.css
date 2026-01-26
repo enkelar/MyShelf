@@ -30,6 +30,7 @@
   overflow: hidden; 
   text-overflow: ellipsis; 
   display: -webkit-box;
+  line-clamp: 10; 
   -webkit-line-clamp: 10; 
   -webkit-box-orient: vertical;
 }
@@ -53,7 +54,7 @@
 
 .book-info {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   margin-top: 20px;
   gap: 10px;

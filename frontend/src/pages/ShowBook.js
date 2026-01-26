@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../utils/axios";
 import { useParams } from "react-router-dom";
 import BackButton from "../components/BackButton";
 import "./showBook.css";
@@ -18,7 +18,7 @@ const ShowBook = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [id]);
 
   return (
     <div className="container">

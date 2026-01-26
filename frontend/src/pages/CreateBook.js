@@ -1,8 +1,7 @@
-// CreateBooks.js
 import React, { useState } from "react";
 import BackButton from "../components/BackButton";
 
-import axios from "axios";
+import axios from "../utils/axios";
 import { useNavigate } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import SaveButton from "../components/SaveButton";
@@ -33,7 +32,7 @@ const CreateBooks = () => {
     axios
       .post("http://localhost:8080/books", data)
       .then(() => {
-        enqueueSnackbar("Book Created successfully", { variant: "success" });
+        enqueueSnackbar("Book Created successfully", { variant: "success", autoHideDuration: 1500  });
         console.log('Book created succesfully')
         navigate("/");
       })
