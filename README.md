@@ -83,9 +83,4 @@ Backend: http://localhost:8080
 Enkela Retkoceri
 Applied Informatics Student
 
-<<<<<<< HEAD
-=======
-GitHub: https://github.com/enkelar
-
->>>>>>> d0fdd4dce16a9e92571b32ab2e51a388463d721f
 LinkedIn: https://www.linkedin.com/in/enkela-retkoceri
