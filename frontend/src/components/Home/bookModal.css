@@ -13,58 +13,76 @@
 
 .modal-content {
   width: 600px;
-  max-width: 100%;
-  height: auto; 
-  max-height: 80vh; 
-  overflow-y: auto; 
+  max-width: 95%;
+  height: auto;
+  max-height: 80vh;
+  overflow-y: auto;
   background-color: #fff;
   border-radius: 12px;
-  padding: 16px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   position: relative;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
-.modal-description {
-  margin-top: 20px;
-  overflow: hidden; 
-  text-overflow: ellipsis; 
-  display: -webkit-box;
-  line-clamp: 10; 
-  -webkit-line-clamp: 10; 
-  -webkit-box-orient: vertical;
-}
-
-.close-icon {
+.modal-content .close-icon {
   position: absolute;
   right: 16px;
   top: 16px;
   font-size: 24px;
-  color: #ff0000;
+  color: #ff4444;
   cursor: pointer;
+  transition: color 0.2s;
 }
 
-.year-badge {
-  width: fit-content;
+.modal-content .close-icon:hover {
+  color: #cc0000;
+}
+
+.modal-content .year-badge {
+ width: fit-content;
   padding: 8px;
-  background-color: rgb(30, 21, 70) ;
+  background-color: rgb(30, 21, 70);
   color: white;
   border-radius: 8px;
 }
 
-.book-info {
-  display: flex;
+.modal-content .bm-book-info {
+ display: flex;
   justify-content: flex-start;
   align-items: center;
   margin-top: 20px;
   gap: 10px;
 }
 
-.book-icon {
-  color: #ff4500;
+.modal-content .book-icon {
+   color: #ff4500;
   font-size: 20px;
 }
 
-.modal-description {
+.modal-content h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.modal-content .description-label {
   margin-top: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 625;
+  text-decoration: underline;
+  display: -webkit-box;
+  line-clamp: 10;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
+}
+.modal-content .book-description {
+  margin-top: 24px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #555;
+  font-size: 16px;
 }

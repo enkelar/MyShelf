@@ -12,34 +12,49 @@ const Home = () => {
     window.location.reload();
   };
 
-  //fetch list of books
   useEffect(() => {
     axios
-      .get("http://localhost:8080/books")
+      .get("/books")
       .then((res) => {
         setBooks(res.data.data);
       })
       .catch((error) => {
-        console.log(error);
+        console.error("Error fetching books:", error);
       });
-  }, []); // Empty dependency array ensures the effect runs only on mount
+  }, []);
 
   return (
-    <div>
+    <div className="home-wrapper">
       <nav className="navbar">
-        <Link to="/books/create" className="addLink">
-          <button className="addButton">
-            <b>ADD</b>
+        <div className="nav-section nav-left">
+          <Link to="/books/create" className="addLink">
+            <button className="addButton">ADD</button>
+          </Link>
+        </div>
+
+        <div className="nav-section nav-center">
+          <h1 className="logo">MyShelf</h1>
+        </div>
+
+        <div className="nav-section nav-right">
+          <button className="logOutBtn" onClick={handleLogout}>
+            Logout
           </button>
-        </Link>
-        <h1>MyShelf</h1>
-        <button className="white_btn" onClick={handleLogout}>
-          Logout
-        </button>
+        </div>
       </nav>
+
       <div className="container">
-        <h1>Book List</h1>
-        <BooksCard books={books} />
+        <header className="content-header">
+          <h1>Book List</h1>
+        </header>
+        {books.length === 0 ? (
+  <p className="no-books-message">
+    No books yet! Start adding books to your collection.
+  </p>
+) : (
+  <BooksCard books={books} />
+)}
+
       </div>
     </div>
   );

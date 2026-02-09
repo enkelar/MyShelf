@@ -13,14 +13,20 @@ const bookSchema = new mongoose.Schema(
     publishYear: {
       type: Number,
       required: true,
+      validate: {
+        validator: function (value) {
+          return value <= new Date().getFullYear();
+        },
+        message: "Publish year cannot be in the future"
+      }
     },
     description: {
       type: String,
     },
-     user: { 
-      type: mongoose.Schema.Types.ObjectId, 
-      ref: 'user', 
-      required: true 
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'user',
+      required: true
     },
   },
   {

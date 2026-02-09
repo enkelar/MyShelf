@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import BackButton from "../components/BackButton";
-import axios from "../utils/axios";
+import BackButton from "../../components/buttons/BackButton";
+import axios from "../../utils/axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";
-import SaveButton from "../components/SaveButton";
+import SaveButton from "../../components/buttons/SaveButton";
 import "./editBook.css";
 
 const EditBook = () => {
@@ -22,7 +22,7 @@ const EditBook = () => {
   //data fetching
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/books/${id}`) // Change port to 8080
+      .get(`/books/${id}`)
       .then((res) => {
         setAuthor(res.data.author);
         setPublishYear(res.data.publishYear);
@@ -36,6 +36,19 @@ const EditBook = () => {
   }, [id]);
 
   const handleEditBook = () => {
+    const currentYear = new Date().getFullYear();
+
+    // Validate publish year
+    if (!publishYear) {
+      enqueueSnackbar("Please enter a publish year", { variant: "warning" });
+      return;
+    }
+
+    if (publishYear > currentYear) {
+      enqueueSnackbar(`Publish year cannot be beyond ${currentYear}`, { variant: "error" });
+      return;
+    }
+
     const data = {
       title,
       author,
@@ -44,22 +57,25 @@ const EditBook = () => {
     };
 
     axios
-      .put(`http://localhost:8080/books/${id}`, data)
+      .put(`/books/${id}`, data)
       .then(() => {
         enqueueSnackbar("Book Edited successfully", { variant: "success", autoHideDuration: 1500 });
         console.log('Book edited succesfully')
         navigate("/");
       })
       .catch((error) => {
-        enqueueSnackbar("Error", { variant: "error" });
+        const errorMsg = error.response?.data?.message || "Error editing book";
+        enqueueSnackbar(errorMsg, { variant: "error" });
         console.log(error);
       });
   };
 
   return (
-    <div className="container">
+    <div className="edit-book container">
       <BackButton />
-      <h1 className="heading">Edit Book</h1>
+      <div className="edit-book-heading">
+        <h1>Edit Book</h1>
+      </div>
 
       <div className="form-container">
         <div className="form-input">
@@ -86,6 +102,7 @@ const EditBook = () => {
             type="number"
             value={publishYear}
             onChange={(e) => setPublishYear(e.target.value)}
+            max={new Date().getFullYear()}
             className="form-field"
           />
         </div>

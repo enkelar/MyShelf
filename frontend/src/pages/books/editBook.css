@@ -1,0 +1,55 @@
+.edit-book .container {
+  padding: 16px;
+}
+
+.edit-book-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.edit-book-heading h1 {
+  font-size: 2rem;
+  color: #333;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.edit-book-heading h1::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 4px;
+  background-color: rgb(30, 21, 70);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.edit-book .form-container {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgb(30, 21, 70);
+  border-radius: 12px;
+  width: 600px;
+  padding: 16px;
+  margin: 0 auto;
+}
+
+.edit-book .form-input {
+  margin: 8px 0;
+}
+
+.edit-book .form-label {
+  font-size: 16px;
+  margin-right: 16px;
+  color: #808080; 
+}
+
+.edit-book .form-field {
+  border: 2px solid #808080; 
+  border-radius: 8px;
+  padding: 8px;
+  width: 100%;
+}

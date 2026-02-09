@@ -2,10 +2,29 @@
   padding: 16px;
 }
 
-.heading {
-  font-size: 24px;
-  margin: 16px 0;
+.header-container {
   text-align: center;
+  margin-bottom: 40px;
+}
+
+.header-container h1 {
+  font-size: 2rem;
+  color: #333;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.header-container h1::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 4px;
+  background-color: rgb(30, 21, 70);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
 }
 
 .form-container {
@@ -35,7 +54,7 @@
   width: 100%;
 }
 
-/* .save-button {
+.save-button {
   background-color: rgb(30, 21, 70);
   color: #ffffff;
   padding: 16px;
@@ -43,4 +62,4 @@
   border-radius: 8px;
   cursor: pointer;
   width: 100%;
-} */
+}

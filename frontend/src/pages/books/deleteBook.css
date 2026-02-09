@@ -1,8 +1,8 @@
-.container {
+.delete-book .container {
   padding: 16px;
 }
 
-.heading {
+.delete-book .heading {
   font-size: 24px;
   margin: 16px 0;
   text-align: center;
@@ -15,9 +15,10 @@
   border: 2px solid rgb(30, 21, 70);
   border-radius: 12px;
   width: 600px;
-  padding: 8px;
-  margin: 0 auto;
+  padding: 24px;
+  margin: 80px auto 0 auto;
 }
+
 
 .confirmation-message {
   font-size: 20px;

@@ -71,12 +71,11 @@ npm install
 
 npm start
 
-
-**The application will run at:
+\*\*The application will run at:
 
 Frontend: http://localhost:3000
 
-Backend: http://localhost:8080 
+Backend: http://localhost:8080
 
 ## Author
 

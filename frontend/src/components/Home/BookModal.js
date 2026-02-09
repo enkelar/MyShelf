@@ -8,21 +8,21 @@ const BookModal = ({ book, onClose }) => {
   return (
     <div className='modal-overlay' onClick={onClose}>
       <div
-        onClick={(event) => event.stopPropagation()} // Stops modal from closing when clicking inside the content
+        onClick={(event) => event.stopPropagation()}
         className='modal-content'
       >
         <AiOutlineClose className='close-icon' onClick={onClose} />
         <h4 className='year-badge'>{book.publishYear}</h4>
-        <div className='book-info'>
+        <div className='bm-book-info'>
           <PiBookOpenTextLight className='book-icon' />
-          <h2>{book.title}</h2>
+          <h3>{book.title}</h3>
         </div>
-        <div className='book-info'>
+        <div className='bm-book-info'>
           <BiUserCircle className='book-icon' />
-          <h2>{book.author}</h2>
+          <h3>{book.author}</h3>
         </div>
-        <p className='modal-description'>Book description</p>
-        <p>{book.description}</p>
+        <p className='description-label'>Book description</p>
+        <p className='book-description'>{book.description}</p>
       </div>
     </div>
   );

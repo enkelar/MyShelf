@@ -1,5 +1,5 @@
-import BackButton from "../components/BackButton";
-import axios from "../utils/axios";
+import BackButton from "../../components/buttons/BackButton";
+import axios from "../../utils/axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import "./deleteBook.css";
@@ -11,7 +11,7 @@ const DeleteBook = () => {
 
   const handleDeleteBook = () => {
     axios
-      .delete(`http://localhost:8080/books/${id}`)
+      .delete(`/books/${id}`)
       .then(() => {
         enqueueSnackbar("Book Deleted successfully", { variant: "success", autoHideDuration: 1500 });
         console.log('Book deleted succesfully')
@@ -24,7 +24,7 @@ const DeleteBook = () => {
   };
 
   return (
-    <div className="container">
+    <div className="delete-book container">
       <BackButton />
       <div className="delete-container">
         <h3 className="confirmation-message">

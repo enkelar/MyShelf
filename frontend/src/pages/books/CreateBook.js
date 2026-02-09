@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import BackButton from "../components/BackButton";
+import BackButton from "../../components/buttons/BackButton";
 
-import axios from "../utils/axios";
+import axios from "../../utils/axios";
 import { useNavigate } from "react-router-dom";
 import { useSnackbar } from "notistack";
-import SaveButton from "../components/SaveButton";
+import SaveButton from "../../components/buttons/SaveButton";
 import "./createBook.css";
 
 const CreateBooks = () => {
@@ -20,6 +20,19 @@ const CreateBooks = () => {
   const { enqueueSnackbar } = useSnackbar();
 
   const handleSaveBook = () => {
+    const currentYear = new Date().getFullYear();
+
+    // Validate publish year
+    if (!publishYear) {
+      enqueueSnackbar("Please enter a publish year", { variant: "warning" });
+      return;
+    }
+
+    if (publishYear > currentYear) {
+      enqueueSnackbar(`Publish year cannot be beyond ${currentYear}`, { variant: "error" });
+      return;
+    }
+
     //prepare data to send to server
     const data = {
       title,
@@ -30,14 +43,15 @@ const CreateBooks = () => {
 
     //send req to server
     axios
-      .post("http://localhost:8080/books", data)
+      .post("/books", data)
       .then(() => {
-        enqueueSnackbar("Book Created successfully", { variant: "success", autoHideDuration: 1500  });
+        enqueueSnackbar("Book Created successfully", { variant: "success", autoHideDuration: 1500 });
         console.log('Book created succesfully')
         navigate("/");
       })
       .catch((error) => {
-        enqueueSnackbar("Error", { variant: "error" });
+        const errorMsg = error.response?.data?.message || "Error creating book";
+        enqueueSnackbar(errorMsg, { variant: "error" });
         console.log(error);
       });
   };
@@ -45,7 +59,9 @@ const CreateBooks = () => {
   return (
     <div className="container">
       <BackButton />
-      <h1 className="heading">Create Book</h1>
+      <div className="header-container">
+        <h1>Add Book</h1>
+      </div>
 
       <div className="form-container">
         <div className="form-input">
@@ -73,6 +89,7 @@ const CreateBooks = () => {
             type="number"
             value={publishYear}
             onChange={(e) => setPublishYear(e.target.value)}
+            max={new Date().getFullYear()}
             className="form-field"
           />
         </div>
