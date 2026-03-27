@@ -54,12 +54,58 @@
   width: 100%;
 }
 
-.save-button {
-  background-color: rgb(30, 21, 70);
-  color: #ffffff;
-  padding: 16px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  width: 100%;
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding: 12px;
+  }
+
+  .header-container {
+    margin-bottom: 30px;
+  }
+
+  .header-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .form-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+  }
+
+  .form-label {
+    font-size: 15px;
+  }
+
+  .form-field {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 8px;
+  }
+
+  .header-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .header-container h1::after {
+    width: 40px;
+  }
+
+  .form-container {
+    max-width: 90%;
+    padding: 10px;
+  }
+
+  .form-label {
+    font-size: 14px;
+  }
+
+  .form-field {
+    padding: 12px;
+  }
 }

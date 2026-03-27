@@ -6,6 +6,7 @@ import "./home.css";
 
 const Home = () => {
   const [books, setBooks] = useState([]);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -41,6 +42,23 @@ const Home = () => {
             Logout
           </button>
         </div>
+
+        <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </div>
+
+        {menuOpen && (
+          <div className="mobile-menu">
+            <Link to="/books/create" className="mobile-menu-item" onClick={() => setMenuOpen(false)}>
+              ADD
+            </Link>
+            <button className="mobile-menu-item logout-mobile" onClick={() => { handleLogout(); setMenuOpen(false); }}>
+              Logout
+            </button>
+          </div>
+        )}
       </nav>
 
       <div className="container">

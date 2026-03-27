@@ -34,3 +34,47 @@
   cursor: pointer;
   width: 100%;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .delete-book .container {
+    padding: 12px;
+  }
+
+  .delete-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    margin: 60px auto 0 auto;
+  }
+
+  .confirmation-message {
+    font-size: 18px;
+    margin: 14px 0;
+  }
+
+  .delete-button {
+    padding: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .delete-book .container {
+    padding: 8px;
+  }
+
+  .delete-container {
+    max-width: 100%;
+    padding: 16px;
+    margin: 40px auto 0 auto;
+  }
+
+  .confirmation-message {
+    font-size: 16px;
+    margin: 12px 0;
+  }
+
+  .delete-button {
+    padding: 12px;
+  }
+}

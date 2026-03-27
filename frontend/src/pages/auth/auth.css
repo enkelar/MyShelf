@@ -399,8 +399,9 @@ button:focus {
   }
 
   .form_container {
-    padding: 30px 20px;
+    padding: 30px 20px 40px;
     height: auto;
+    padding-top: 50px;
   }
 
   .mobile_signup_btn,
@@ -427,7 +428,8 @@ button:focus {
   }
 
   .form_container {
-    padding: 0 20px;
+    padding: 0 20px 30px;
+    padding-top: 40px;
   }
 
   .form_container h1 {

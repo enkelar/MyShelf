@@ -91,3 +91,58 @@
   align-items: center;
   justify-content: center;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .book-card {
+    padding: 12px;
+  }
+
+  .book-info {
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  .book-info h2 {
+    font-size: 13px;
+  }
+
+  .book-actions {
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .action-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .book-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-card {
+    padding: 10px;
+  }
+
+  .book-info h2 {
+    font-size: 12px;
+  }
+
+  .action-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .book-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+  }
+}

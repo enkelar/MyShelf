@@ -1,0 +1,27 @@
+.save-button {
+  background-color: rgb(30, 21, 70);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  margin: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .save-button {
+    padding: 0.6rem 1.2rem;
+    margin: 10px auto;
+    width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .save-button {
+    padding: 0.7rem 1.4rem;
+    margin: 12px auto;
+    width: auto;
+  }
+}

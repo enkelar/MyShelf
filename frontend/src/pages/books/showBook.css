@@ -60,3 +60,78 @@
   margin-left: 16px;               
   word-break: break-word;          
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .show-book {
+    padding: 12px;
+  }
+
+  .show-book-heading {
+    margin-bottom: 30px;
+  }
+
+  .show-book-heading h1 {
+    font-size: 1.8rem;
+  }
+
+  .show-book-details {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    margin: 30px auto 0 auto;
+  }
+
+  .show-book-info {
+    margin: 10px 0;
+    padding: 6px 0;
+  }
+
+  .show-book-label {
+    font-size: 15px;
+    min-width: 100px;
+  }
+
+  .show-book-value {
+    font-size: 15px;
+    margin-left: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .show-book {
+    padding: 8px;
+  }
+
+  .show-book-heading h1 {
+    font-size: 1.5rem;
+  }
+
+  .show-book-heading h1::after {
+    width: 40px;
+  }
+
+  .show-book-details {
+    max-width: 100%;
+    padding: 16px;
+    margin: 20px auto 0 auto;
+  }
+
+  .show-book-info {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 8px 0;
+    padding: 4px 0;
+  }
+
+  .show-book-label {
+    font-size: 14px;
+    min-width: unset;
+    margin-bottom: 4px;
+  }
+
+  .show-book-value {
+    font-size: 14px;
+    margin-left: 0;
+  }
+}
