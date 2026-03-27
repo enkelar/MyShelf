@@ -317,6 +317,32 @@ button:focus {
   outline: none;
 }
 
+.mobile_signup_btn, .mobile_signin_btn {
+  background-color: transparent;
+  color: #1e1546;
+  border: 2px solid #1e1546;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 14px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border-radius: 25px;
+  cursor: pointer;
+  width: 100%;
+  display: none;
+}
+
+.mobile_signup_btn:hover, .mobile_signin_btn:hover {
+  background-color: rgba(30, 21, 70, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(30, 21, 70, 0.1);
+}
+
+.mobile_signup_btn:active, .mobile_signin_btn:active {
+  transform: scale(0.98);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .auth_container {
@@ -325,24 +351,56 @@ button:focus {
   
   .auth_box {
     width: 95%;
-    min-height: 480px;
+    min-height: auto;
     max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .form_panel {
+    position: static;
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    flex: 1;
+    transform: none;
+  }
+  
+  .sliding_animation, .overlay_panel {
+    display: none;
+  }
+  
+  .login_panel {
+    display: block;
+  }
+  
+  .signup_panel {
+    display: none;
+    opacity: 1;
+  }
+  
+  .auth_box.right-panel-active .login_panel {
+    display: none;
+  }
+  
+  .auth_box.right-panel-active .signup_panel {
+    display: block;
+  }
+  
+  .auth_box.right-panel-active .login_panel,
+  .auth_box.right-panel-active .signup_panel {
+    transform: none;
+    opacity: 1;
   }
   
   .form_container {
-    padding: 0 30px;
+    padding: 30px 20px;
+    height: auto;
   }
   
-  .overlay_panel {
-    padding: 0 25px;
-  }
-  
-  .overlay_panel h1 {
-    font-size: 22px;
-  }
-  
-  .overlay_panel p {
-    font-size: 13px;
+  .mobile_signup_btn, .mobile_signin_btn {
+    display: block;
   }
   
   .form_container h1 {
@@ -350,7 +408,7 @@ button:focus {
   }
   
   .form_container form {
-    max-width: 280px;
+    max-width: 100%;
   }
 }
 

@@ -62,6 +62,10 @@ const Login = () => {
         <button type="submit" className="green_btn">
           Sign In
         </button>
+
+        <button type="button" className="mobile_signup_btn" onClick={() => (window.location.hash = "#signup")}>
+          Sign Up
+        </button>
       </form>
     </div>
   );
