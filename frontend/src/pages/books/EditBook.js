@@ -11,16 +11,14 @@ const EditBook = () => {
   const [author, setAuthor] = useState("");
   const [publishYear, setPublishYear] = useState("");
   const [description, setDescription] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
-
-  // Accessing the book id from the route parameters
   const { id } = useParams();
-
   const { enqueueSnackbar } = useSnackbar();
 
-  //data fetching
   useEffect(() => {
+    setLoading(true); // Start loading when ID changes
     axios
       .get(`/books/${id}`)
       .then((res) => {
@@ -28,8 +26,10 @@ const EditBook = () => {
         setPublishYear(res.data.publishYear);
         setTitle(res.data.title);
         setDescription(res.data.description);
+        setLoading(false); // Data is ready, stop loading
       })
       .catch((error) => {
+        setLoading(false);
         alert("An error happened. Please check console");
         console.log(error);
       });
@@ -38,7 +38,6 @@ const EditBook = () => {
   const handleEditBook = () => {
     const currentYear = new Date().getFullYear();
 
-    // Validate publish year
     if (!publishYear) {
       enqueueSnackbar("Please enter a publish year", { variant: "warning" });
       return;
@@ -49,18 +48,12 @@ const EditBook = () => {
       return;
     }
 
-    const data = {
-      title,
-      author,
-      publishYear,
-      description,
-    };
+    const data = { title, author, publishYear, description };
 
     axios
       .put(`/books/${id}`, data)
       .then(() => {
         enqueueSnackbar("Book Edited successfully", { variant: "success", autoHideDuration: 1500 });
-        console.log('Book edited succesfully')
         navigate("/");
       })
       .catch((error) => {
@@ -69,6 +62,8 @@ const EditBook = () => {
         console.log(error);
       });
   };
+
+  if (loading) return null;
 
   return (
     <div className="edit-book container">

@@ -5,10 +5,9 @@ import BackButton from "../../components/buttons/BackButton";
 import "./showBook.css";
 
 const ShowBook = () => {
-  const [book, setBook] = useState({});
+  const [book, setBook] = useState(null);
   const { id } = useParams();
 
-  //Fetch book details
   useEffect(() => {
     axios
       .get(`/books/${id}`)
@@ -19,6 +18,8 @@ const ShowBook = () => {
         console.log(error);
       });
   }, [id]);
+
+  if (!book) return null; 
 
   return (
     <div className="show-book container">

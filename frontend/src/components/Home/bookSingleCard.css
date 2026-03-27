@@ -2,50 +2,34 @@
   border: 2px solid #333;
   border-radius: 8px;
   padding: 16px;
-  margin: 16px;
   position: relative;
   transition: box-shadow 0.3s;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  background: white;           
 }
-
 
 .book-card:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 
 .book-info {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 8px;
+  margin-bottom: 10px;     
 }
-
-
-.book-icon {
-  color: rgb(67, 9, 80);
-  font-size: 20px;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 
 .book-info h2 {
   margin: 0;
   font-size: 14px;
+  font-weight: 600;
+  color: #333;
 }
-
 
 .book-details {
   margin: 0.25rem 0;
   font-size: 12px;
 }
-
 
 .book-actions {
   display: flex;
@@ -54,7 +38,6 @@
   gap: 4px;
   margin-top: 16px;
 }
-
 
 .action-icon {
   font-size: 20px;
@@ -72,7 +55,7 @@
 }
 
 .show-icon:hover {
-  color: #27ae60;
+  color: #1a7942;
 }
 
 .info-icon {
@@ -80,7 +63,7 @@
 }
 
 .info-icon:hover {
-  color: #2980b9;
+  color: #1b5e8a;
 }
 
 .edit-icon {
@@ -88,7 +71,7 @@
 }
 
 .edit-icon:hover {
-  color: #e67e22;
+  color: #be5e0b;
 }
 
 .delete-icon {
@@ -96,10 +79,15 @@
 }
 
 .delete-icon:hover {
-  color: #c0392b;
+  color: #882a20;
 }
 
-
-.action-icon:hover {
-  color: #000;
+.book-icon {
+  color: rgb(67, 9, 80);
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

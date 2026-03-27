@@ -13,6 +13,7 @@ const CreateBooks = () => {
   const [author, setAuthor] = useState("");
   const [publishYear, setPublishYear] = useState("");
   const [description, setDescription] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -48,13 +49,17 @@ const CreateBooks = () => {
         enqueueSnackbar("Book Created successfully", { variant: "success", autoHideDuration: 1500 });
         console.log('Book created succesfully')
         navigate("/");
+        setLoading(false);
       })
       .catch((error) => {
+        setLoading(false);
         const errorMsg = error.response?.data?.message || "Error creating book";
         enqueueSnackbar(errorMsg, { variant: "error" });
         console.log(error);
       });
   };
+
+  if (loading) return null;
 
   return (
     <div className="container">

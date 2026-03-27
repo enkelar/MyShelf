@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f8f9fa;
 }
 
@@ -47,12 +47,16 @@ body {
   letter-spacing: 1px;
 }
 
+.addLink {
+  text-decoration: none;
+}
+
 .addButton {
   border: none;
   outline: none;
   padding: 10px 25px;
   background-color: white;
-  border-radius: 50px; 
+  border-radius: 50px;
   font-weight: bold;
   font-size: 14px;
   cursor: pointer;
@@ -74,7 +78,7 @@ body {
   outline: none;
   padding: 10px 25px;
   background-color: white;
-  border-radius: 50px; 
+  border-radius: 50px;
   font-weight: bold;
   font-size: 14px;
   cursor: pointer;
@@ -112,7 +116,7 @@ body {
 }
 
 .content-header h1::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 50px;
   height: 4px;
@@ -128,7 +132,9 @@ body {
   border: 1px solid #ddd;
   border-radius: 12px;
   padding: 20px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 .card:hover {
@@ -158,27 +164,27 @@ body {
 }
 
 .action-icon.info {
-  color: #28a745; 
+  color: #28a745;
 }
 
 .action-icon.info:hover {
-  color: #1e7e34; 
+  color: #1e7e34;
 }
 
 .action-icon.edit {
-  color: #007bff; 
+  color: #007bff;
 }
 
 .action-icon.edit:hover {
-  color: #0056b3; 
+  color: #0056b3;
 }
 
 .action-icon.delete {
-  color: #dc3545; 
+  color: #dc3545;
 }
 
 .action-icon.delete:hover {
-  color: #a71d2a; 
+  color: #a71d2a;
 }
 
 .no-books-message {

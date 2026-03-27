@@ -1,0 +1,16 @@
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  align-items: stretch;          
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;                  
+}
+
+.book-actions {
+  margin-top: auto;            
+}

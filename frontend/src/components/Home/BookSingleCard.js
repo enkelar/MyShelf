@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineBook, AiOutlineUser, AiOutlineEdit, AiOutlineInfoCircle, AiOutlineDelete, AiOutlineClockCircle, AiOutlineEye } from "react-icons/ai";
 import BookModal from "./BookModal";
-import "./bookSingleCard.css";
-
+import "./bookCard.css";           
+import "./bookSingleCard.css";     
 
 const BookSingleCard = ({ book }) => {
   const [showModal, setShowModal] = useState(false);
-
 
   return (
     <div className="book-card">
@@ -23,6 +22,7 @@ const BookSingleCard = ({ book }) => {
         <AiOutlineClockCircle className="book-icon" />
         <h2>{book.publishYear}</h2>
       </div>
+
       <div className="book-actions">
         <AiOutlineEye
           className="action-icon show-icon"
@@ -38,13 +38,12 @@ const BookSingleCard = ({ book }) => {
           <AiOutlineDelete className="action-icon delete-icon" />
         </Link>
       </div>
-      {/* Display BookModal when showModal state is true */}
+
       {showModal && (
         <BookModal book={book} onClose={() => setShowModal(false)} />
       )}
     </div>
   );
 };
-
 
 export default BookSingleCard;
