@@ -66,12 +66,12 @@ const Home = () => {
           <h1>Book List</h1>
         </header>
         {books.length === 0 ? (
-  <p className="no-books-message">
-    No books yet! Start adding books to your collection.
-  </p>
-) : (
-  <BooksCard books={books} />
-)}
+          <p className="no-books-message">
+            No books yet! Start adding books to your collection.
+          </p>
+        ) : (
+          <BooksCard books={books} />
+        )}
 
       </div>
     </div>

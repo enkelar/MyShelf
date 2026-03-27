@@ -16,7 +16,7 @@
 }
 
 .show-book-heading h1::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 50px;
   height: 4px;
@@ -39,26 +39,26 @@
 
 .show-book-info {
   display: flex;
-  justify-content: space-between;  
-  align-items: baseline;           
-  margin: 12px 0;                  
-  padding: 8px 0;                  
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 12px 0;
+  padding: 8px 0;
 }
 
 .show-book-label {
   font-size: 16px;
-  font-weight: 600;                
-  color: #808080;               
-  min-width: 120px;                
-  flex-shrink: 0;                  
+  font-weight: 600;
+  color: #808080;
+  min-width: 120px;
+  flex-shrink: 0;
 }
 
 .show-book-value {
   font-size: 16px;
-  color: #333;                     
-  flex: 1;                         
-  margin-left: 16px;               
-  word-break: break-word;          
+  color: #333;
+  flex: 1;
+  margin-left: 16px;
+  word-break: break-word;
 }
 
 /* Mobile Responsiveness */

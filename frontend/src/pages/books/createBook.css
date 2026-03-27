@@ -16,7 +16,7 @@
 }
 
 .header-container h1::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 50px;
   height: 4px;

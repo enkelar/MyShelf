@@ -16,7 +16,7 @@
 }
 
 .edit-book-heading h1::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 50px;
   height: 4px;
@@ -44,11 +44,11 @@
 .edit-book .form-label {
   font-size: 16px;
   margin-right: 16px;
-  color: #808080; 
+  color: #808080;
 }
 
 .edit-book .form-field {
-  border: 2px solid #808080; 
+  border: 2px solid #808080;
   border-radius: 8px;
   padding: 8px;
   width: 100%;
