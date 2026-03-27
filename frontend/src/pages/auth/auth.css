@@ -1,5 +1,5 @@
 .auth_container {
-  background: linear-gradient(135deg, #352d58  0%, #57378e   100%);
+  background: linear-gradient(135deg, #352d58 0%, #57378e 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,7 +9,7 @@
   margin: 0;
   box-sizing: border-box;
   overflow: hidden;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .auth_box {
@@ -317,7 +317,8 @@ button:focus {
   outline: none;
 }
 
-.mobile_signup_btn, .mobile_signin_btn {
+.mobile_signup_btn,
+.mobile_signin_btn {
   background-color: transparent;
   color: #1e1546;
   border: 2px solid #1e1546;
@@ -333,13 +334,15 @@ button:focus {
   display: none;
 }
 
-.mobile_signup_btn:hover, .mobile_signin_btn:hover {
+.mobile_signup_btn:hover,
+.mobile_signin_btn:hover {
   background-color: rgba(30, 21, 70, 0.1);
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(30, 21, 70, 0.1);
 }
 
-.mobile_signup_btn:active, .mobile_signin_btn:active {
+.mobile_signup_btn:active,
+.mobile_signin_btn:active {
   transform: scale(0.98);
 }
 
@@ -348,7 +351,7 @@ button:focus {
   .auth_container {
     padding: 15px;
   }
-  
+
   .auth_box {
     width: 95%;
     min-height: auto;
@@ -357,7 +360,7 @@ button:focus {
     flex-direction: column;
     height: auto;
   }
-  
+
   .form_panel {
     position: static;
     width: 100%;
@@ -366,47 +369,49 @@ button:focus {
     flex: 1;
     transform: none;
   }
-  
-  .sliding_animation, .overlay_panel {
+
+  .sliding_animation,
+  .overlay_panel {
     display: none;
   }
-  
+
   .login_panel {
     display: block;
   }
-  
+
   .signup_panel {
     display: none;
     opacity: 1;
   }
-  
+
   .auth_box.right-panel-active .login_panel {
     display: none;
   }
-  
+
   .auth_box.right-panel-active .signup_panel {
     display: block;
   }
-  
+
   .auth_box.right-panel-active .login_panel,
   .auth_box.right-panel-active .signup_panel {
     transform: none;
     opacity: 1;
   }
-  
+
   .form_container {
     padding: 30px 20px;
     height: auto;
   }
-  
-  .mobile_signup_btn, .mobile_signin_btn {
+
+  .mobile_signup_btn,
+  .mobile_signin_btn {
     display: block;
   }
-  
+
   .form_container h1 {
     font-size: 24px;
   }
-  
+
   .form_container form {
     max-width: 100%;
   }
@@ -416,30 +421,32 @@ button:focus {
   .auth_container {
     padding: 10px;
   }
-  
+
   .auth_box {
     min-height: 450px;
   }
-  
+
   .form_container {
     padding: 0 20px;
   }
-  
+
   .form_container h1 {
     font-size: 22px;
     margin-bottom: 20px;
   }
-  
+
   .overlay_panel h1 {
     font-size: 20px;
   }
-  
+
   .overlay_panel p {
     font-size: 12px;
     margin-bottom: 25px;
   }
-  
-  .ghost, .green_btn, .white_btn {
+
+  .ghost,
+  .green_btn,
+  .white_btn {
     padding: 12px 30px;
     font-size: 12px;
   }
