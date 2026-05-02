@@ -7,6 +7,8 @@ It allows users to register, log in, and perform CRUD operations (create, read, 
 
 This project follows a client–server architecture and demonstrates practical use of modern web technologies.
 
+![img alt](https://github.com/enkelar/MyShelf/blob/f6e044657944cfc01f4f71c55cbb0742b7e30cf7/MyShelf%20Mockup.png)
+
 ## Features
 
 -User registration and authentication (JWT-based)
